@@ -1,0 +1,831 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-[#050d1d] text-slate-100 antialiased selection:bg-blue-600 selection:text-white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* ==========================================================================
+   DAY MODE (WHITE THEME) - HIGH CONTRAST & BOLD ICONS
+   ========================================================================== */
+html.light,
+html.light body,
+html.light #root,
+html.light .min-h-screen,
+html.light [class*="bg-\[#050e1f\]"],
+html.light [class*="bg-\[#050d1d\]"],
+html.light .bg-\[\#050e1f\],
+html.light .bg-\[\#050d1d\] {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Make all Lucide icons bolder and crisply defined in Day Mode */
+html.light svg.lucide,
+html.light svg {
+  stroke-width: 2.35px !important;
+}
+
+/* Darker, high-visibility icons in Day Mode */
+html.light svg.text-slate-400,
+html.light svg.text-slate-500 {
+  color: #1e293b !important;
+}
+
+html.light svg.text-cyan-400,
+html.light svg.text-cyan-300 {
+  color: #0369a1 !important; /* High-contrast sapphire instead of faint cyan */
+}
+
+html.light svg.text-amber-400,
+html.light svg.text-amber-300 {
+  color: #b45309 !important; /* Deep dark amber */
+}
+
+html.light svg.text-emerald-400,
+html.light svg.text-emerald-300 {
+  color: #047857 !important; /* Deep forest emerald */
+}
+
+html.light svg.text-rose-400,
+html.light svg.text-rose-300 {
+  color: #be123c !important; /* Deep bold rose */
+}
+
+html.light svg.text-blue-400,
+html.light svg.text-blue-300 {
+  color: #1d4ed8 !important; /* Bold royal blue */
+}
+
+/* Sidebar in Day Mode (White Theme) */
+html.light aside {
+  background-color: #ffffff !important;
+  border-right: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light aside .sidebar-brand-header {
+  background: #ffffff !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+}
+
+html.light aside .sidebar-brand-title {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+html.light aside .sidebar-section-label {
+  color: #475569 !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   SIDEBAR ACTIVE & INACTIVE TABS - HIGHEST SPECIFICITY CONTRAST FIX
+   ========================================================================== */
+
+/* Active Sidebar Navigation Tab (Universal & Day Mode) */
+aside nav button.sidebar-active-tab,
+html.light aside nav button.sidebar-active-tab,
+html.dark aside nav button.sidebar-active-tab {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #60a5fa !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.45) !important;
+}
+
+/* Force all text, spans, labels, and SVGs inside active tab to be pure crisp white */
+aside nav button.sidebar-active-tab *,
+html.light aside nav button.sidebar-active-tab *,
+aside nav button.sidebar-active-tab span,
+html.light aside nav button.sidebar-active-tab span,
+aside nav button.sidebar-active-tab svg,
+html.light aside nav button.sidebar-active-tab svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Active Tab Badge Pill - High-contrast glass pill that never gets invisible */
+aside nav button.sidebar-active-tab .sidebar-active-badge,
+html.light aside nav button.sidebar-active-tab .sidebar-active-badge {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+  font-weight: 800 !important;
+}
+
+/* Inactive Sidebar Navigation Tabs in Day Mode */
+html.light aside nav button.sidebar-inactive-tab {
+  background-color: transparent !important;
+  color: #1e293b !important;
+  border: 1px solid transparent !important;
+  font-weight: 600 !important;
+}
+
+html.light aside nav button.sidebar-inactive-tab:hover {
+  background-color: #f1f5f9 !important;
+  color: #1d4ed8 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light aside nav button.sidebar-inactive-tab svg {
+  color: #334155 !important;
+  stroke-width: 2.3px !important;
+}
+
+html.light aside nav button.sidebar-inactive-tab:hover svg {
+  color: #2563eb !important;
+}
+
+/* Sidebar User & Session Footer in Day Mode */
+html.light aside .sidebar-user-footer {
+  background-color: #f8fafc !important;
+  border-top: 1.5px solid #cbd5e1 !important;
+}
+
+html.light aside .sidebar-user-card {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light aside .sidebar-admin-name {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light aside .sidebar-admin-email {
+  color: #475569 !important;
+  font-weight: 500 !important;
+}
+
+html.light aside .shield-avatar svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Header in Day Mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light header .text-white {
+  color: #0f172a !important;
+  font-weight: 800;
+}
+
+html.light header .text-slate-400 {
+  color: #334155 !important;
+  font-weight: 600;
+}
+
+html.light header .text-cyan-400 {
+  color: #0369a1 !important;
+  font-weight: 700;
+}
+
+html.light header .bg-blue-600\/20 {
+  background-color: #eff6ff !important;
+  border: 1px solid #93c5fd !important;
+  color: #1d4ed8 !important;
+  font-weight: 700;
+}
+
+html.light header .bg-blue-600\/20 svg {
+  color: #1d4ed8 !important;
+}
+
+/* Panels, Cards and Content Containers in Day Mode */
+html.light [class*="bg-\[#08152e\]"],
+html.light [class*="bg-\[#091833\]"],
+html.light [class*="bg-\[#0c1e3d\]"],
+html.light [class*="bg-\[#0b1c3a\]"],
+html.light [class*="bg-\[#071328\]"],
+html.light [class*="bg-\[#091b38\]"],
+html.light [class*="bg-\[#0b1a34\]"],
+html.light [class*="bg-\[#0b1d3d\]"],
+html.light [class*="bg-\[#0b1b36\]"],
+html.light [class*="bg-\[#061124\]"],
+html.light [class*="bg-\[#081f42\]"],
+html.light [class*="bg-\[#0b2756\]"],
+html.light [class*="bg-\[#07152e\]"],
+html.light [class*="bg-\[#061022\]"],
+html.light [class*="bg-\[#0a1931\]"],
+html.light .bg-\[\#08152e\],
+html.light .bg-\[\#091833\],
+html.light .bg-\[\#0c1e3d\],
+html.light .bg-\[\#0b1c3a\],
+html.light .bg-\[\#071328\],
+html.light .bg-\[\#091b38\],
+html.light .bg-\[\#0b1a34\],
+html.light .bg-\[\#0b1d3d\],
+html.light .bg-\[\#0b1b36\],
+html.light .bg-\[\#061124\],
+html.light .bg-\[\#081f42\],
+html.light .bg-\[\#0b2756\],
+html.light .bg-\[\#07152e\],
+html.light .bg-\[\#061022\],
+html.light .bg-\[\#0a1931\] {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+
+/* Admin Hero Banners in Day Mode */
+html.light .admin-hero-banner,
+html.light [class*="from-\[#0b244d\]"],
+html.light [class*="from-\[#0b2347\]"],
+html.light [class*="from-\[#0b2447\]"],
+html.light [class*="from-\[#0d2753\]"],
+html.light [class*="from-\[#0e2752\]"],
+html.light [class*="from-\[#0a2145\]"],
+html.light [class*="from-\[#0b2756\]"],
+html.light [class*="from-\[#0c2340\]"],
+html.light [class*="from-\[#0e2246\]"],
+html.light .bg-gradient-to-r.from-\[\#0b244d\],
+html.light .bg-gradient-to-r.from-\[\#0b2347\],
+html.light .bg-gradient-to-r.from-\[\#0b2447\],
+html.light .bg-gradient-to-r.from-\[\#0a2145\],
+html.light .bg-gradient-to-r.from-\[\#0b2046\] {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 45%, #f8fafc 100%) !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 4px 15px -2px rgba(37, 99, 235, 0.08) !important;
+  color: #0f172a !important;
+}
+
+html.light .admin-hero-banner h2,
+html.light .bg-gradient-to-r.from-\[\#0b244d\] h2,
+html.light .bg-gradient-to-r.from-\[\#0b2347\] h2,
+html.light .bg-gradient-to-r.from-\[\#0b2447\] h2,
+html.light .bg-gradient-to-r.from-\[\#0a2145\] h2 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+html.light .admin-hero-banner p,
+html.light .bg-gradient-to-r.from-\[\#0b244d\] p,
+html.light .bg-gradient-to-r.from-\[\#0b2347\] p,
+html.light .bg-gradient-to-r.from-\[\#0b2447\] p,
+html.light .bg-gradient-to-r.from-\[\#0a2145\] p {
+  color: #334155 !important;
+  font-weight: 500 !important;
+}
+
+html.light .admin-hero-banner strong,
+html.light .bg-gradient-to-r.from-\[\#0b244d\] strong,
+html.light .bg-gradient-to-r.from-\[\#0b2347\] strong,
+html.light .bg-gradient-to-r.from-\[\#0b2447\] strong,
+html.light .bg-gradient-to-r.from-\[\#0a2145\] strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .admin-banner-pill,
+html.light .admin-hero-banner .inline-flex {
+  background-color: #eff6ff !important;
+  border: 1px solid #93c5fd !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+
+html.light .admin-banner-pill svg,
+html.light .admin-hero-banner .inline-flex svg {
+  color: #2563eb !important;
+}
+
+/* Secondary Action Buttons in Day Mode (e.g. Asset Inventory) */
+html.light .admin-btn-secondary,
+html.light .admin-hero-banner button.bg-slate-800\/80 {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .admin-btn-secondary:hover,
+html.light .admin-hero-banner button.bg-slate-800\/80:hover {
+  background-color: #eff6ff !important;
+  border-color: #93c5fd !important;
+  color: #1d4ed8 !important;
+}
+
+html.light .admin-btn-secondary svg,
+html.light .admin-hero-banner button.bg-slate-800\/80 svg {
+  color: #2563eb !important;
+}
+
+/* Stat card amber warning in Day Mode */
+html.light .bg-\[\#1b1527\] {
+  background-color: #fffbeb !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.08) !important;
+}
+
+html.light .bg-\[\#1b1527\] span.text-amber-300 {
+  color: #92400e !important;
+  font-weight: 800;
+}
+
+/* Critical 15-Day Alert Warning Banner in Day Mode */
+html.light .bg-gradient-to-r.from-amber-950\/40 {
+  background: #fffbeb !important;
+  border: 1.5px solid #f59e0b !important;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.1) !important;
+}
+
+html.light .bg-gradient-to-r.from-amber-950\/40 h4 {
+  color: #78350f !important;
+  font-weight: 800 !important;
+}
+
+html.light .bg-gradient-to-r.from-amber-950\/40 p {
+  color: #92400e !important;
+  font-weight: 600 !important;
+}
+
+html.light .bg-gradient-to-r.from-amber-950\/40 button {
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  border-color: #d97706 !important;
+  font-weight: 700 !important;
+}
+
+html.light .bg-gradient-to-r.from-amber-950\/40 button svg {
+  color: #ffffff !important;
+}
+
+/* Nested subcards, modals and dark containers in Day Mode */
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/40,
+html.light .bg-slate-800,
+html.light .bg-slate-800\/90,
+html.light .bg-slate-800\/80,
+html.light .bg-slate-800\/70,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/40 {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Category Badges in Asset Tracker */
+html.light .asset-category-badge,
+html.light span.bg-slate-800 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+  font-weight: 700 !important;
+}
+
+/* CRON Execution Log Stat Cards (Evaluated, Due, Dispatched) */
+html.light .cron-stat-card,
+html.light .grid.grid-cols-3 .bg-slate-950 {
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .cron-stat-card span.text-slate-400,
+html.light .grid.grid-cols-3 .bg-slate-950 span.text-slate-400 {
+  color: #475569 !important;
+  font-weight: 700 !important;
+}
+
+html.light .cron-stat-card span.text-white,
+html.light .grid.grid-cols-3 .bg-slate-950 span.text-white {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+html.light .cron-stat-card span.text-amber-300,
+html.light .grid.grid-cols-3 .bg-slate-950 span.text-amber-300 {
+  color: #b45309 !important;
+  font-weight: 900 !important;
+}
+
+html.light .cron-stat-card span.text-cyan-300,
+html.light .grid.grid-cols-3 .bg-slate-950 span.text-cyan-300 {
+  color: #0369a1 !important;
+  font-weight: 900 !important;
+}
+
+/* Email Client Simulation in Day Mode */
+html.light .email-client-header,
+html.light .p-3\.5.bg-slate-950 {
+  background-color: #f8fafc !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .email-client-header strong {
+  color: #0f172a !important;
+}
+
+html.light .email-client-header .text-slate-300 {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+html.light .email-client-header .text-slate-400 {
+  color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+html.light .email-asset-highlight,
+html.light .p-3\.5.rounded-xl.bg-slate-950 {
+  background-color: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .email-asset-highlight h5 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+html.light .bg-blue-950\/40 {
+  background-color: #eff6ff !important;
+  border: 1px solid #93c5fd !important;
+  color: #1e293b !important;
+}
+
+html.light .bg-blue-950\/40 p.text-white {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* High-Contrast Status Badges in Day Mode */
+html.light .bg-amber-500\/20,
+html.light .bg-amber-500\/15 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #f59e0b !important;
+  font-weight: 700 !important;
+}
+
+html.light .bg-emerald-500\/20,
+html.light .bg-emerald-500\/15,
+html.light .bg-emerald-500\/10 {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  border: 1px solid #10b981 !important;
+  font-weight: 700 !important;
+}
+
+html.light .bg-rose-500\/20,
+html.light .bg-rose-500\/10 {
+  background-color: #ffe4e6 !important;
+  color: #9f1239 !important;
+  border: 1px solid #f43f5e !important;
+  font-weight: 700 !important;
+}
+
+html.light .bg-blue-500\/20,
+html.light .bg-blue-500\/10,
+html.light .bg-cyan-500\/20,
+html.light .bg-cyan-500\/15 {
+  background-color: #e0f2fe !important;
+  color: #0369a1 !important;
+  border: 1px solid #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+html.light .bg-purple-500\/20,
+html.light .bg-purple-500\/15 {
+  background-color: #f3e8ff !important;
+  color: #6b21a8 !important;
+  border: 1px solid #c084fc !important;
+  font-weight: 700 !important;
+}
+
+/* Tables in Day Mode */
+html.light table thead,
+html.light thead.bg-\[\#0b1d3d\],
+html.light thead.bg-\[\#0c1e3d\] {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid #cbd5e1 !important;
+}
+
+html.light table thead th {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+}
+
+html.light table tbody tr {
+  border-color: #e2e8f0 !important;
+}
+
+html.light table tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light table tbody td {
+  color: #1e293b !important;
+  font-weight: 500;
+}
+
+html.light table tbody td.font-bold,
+html.light table tbody td .font-bold,
+html.light table tbody td .font-semibold {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .divide-slate-800 > * {
+  border-color: #e2e8f0 !important;
+}
+
+/* General Text & Borders in Day Mode */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-400 {
+  color: #334155 !important;
+  font-weight: 500;
+}
+
+html.light .text-slate-500 {
+  color: #475569 !important;
+  font-weight: 600;
+}
+
+html.light .text-cyan-400,
+html.light .text-cyan-300 {
+  color: #0369a1 !important;
+  font-weight: 600;
+}
+
+html.light .text-amber-400,
+html.light .text-amber-300 {
+  color: #b45309 !important;
+  font-weight: 700;
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #047857 !important;
+  font-weight: 700;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/70,
+html.light .border-slate-700,
+html.light .border-slate-700\/80,
+html.light .border-slate-700\/60,
+html.light .border-slate-700\/50 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Inputs, Textareas and Selects in Day Mode */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  border: 1.5px solid #94a3b8 !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html.light input::placeholder {
+  color: #64748b !important;
+  font-weight: 500;
+}
+
+html.light input:focus,
+html.light select:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Action Buttons in Tables & Cards */
+html.light button.bg-blue-600\/20 {
+  background-color: #eff6ff !important;
+  border: 1px solid #93c5fd !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+
+html.light button.bg-blue-600\/20:hover {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+html.light button.bg-emerald-600\/20 {
+  background-color: #ecfdf5 !important;
+  border: 1px solid #6ee7b7 !important;
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+html.light button.bg-emerald-600\/20:hover {
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+/* Preserve bright buttons with white text */
+html.light .bg-gradient-to-r .text-white,
+html.light button.bg-gradient-to-r,
+html.light button.sidebar-active-tab,
+html.light button.bg-blue-600,
+html.light button.bg-cyan-600,
+html.light button.bg-indigo-600,
+html.light button.bg-emerald-600,
+html.light button.bg-rose-600,
+html.light button.sidebar-active-tab *,
+html.light button.bg-gradient-to-r *,
+html.light button.bg-blue-600 *,
+html.light button.bg-cyan-600 *,
+html.light button.bg-indigo-600 * {
+  color: #ffffff !important;
+}
+
+/* AI Brain in Day Mode */
+html.light .ai-brain-trigger {
+  background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+  border: 2px solid #3b82f6 !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3), 0 0 15px rgba(59, 130, 246, 0.2) !important;
+}
+
+html.light .ai-brain-trigger .ai-brain-emblem-inner {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+
+html.light .ai-brain-trigger .ai-brain-icon {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+html.light .ai-brain-trigger .ai-brain-title {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+html.light .ai-brain-trigger .ai-brain-subtitle {
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+
+html.light .ai-brain-trigger .ai-brain-sparkles {
+  color: #2563eb !important;
+}
+
+html.light .ai-brain-chat-icon-inner {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+}
+
+html.light .ai-brain-chat-icon {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+html.light .fixed.bottom-6.right-6 .bg-\[\#071328\]\/95 {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: 1.5px solid #93c5fd !important;
+  color: #0f172a !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .fixed.bottom-6.right-6 .bg-gradient-to-r.from-\[\#0e2752\] {
+  background: linear-gradient(to right, #eff6ff, #f8fafc) !important;
+  border-bottom: 1.5px solid #cbd5e1 !important;
+}
+
+html.light .fixed.bottom-6.right-6 .bg-\[\#0b1b36\] {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light .fixed.bottom-6.right-6 .bg-\[\#061124\] {
+  background-color: #f8fafc !important;
+  border-top: 1.5px solid #cbd5e1 !important;
+}
+
+/* Toast Notification in Day Mode */
+html.light .fixed.top-4.right-4 > div {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border: 1.5px solid #93c5fd !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .fixed.top-4.right-4 span.text-white,
+html.light .fixed.top-4.right-4 span {
+  color: #0f172a !important;
+}
+
+html.light .fixed.top-4.right-4 .bg-cyan-400 {
+  background-color: #2563eb !important;
+}
+
+/* Print stylesheet optimization for Tax Invoices */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  header, aside, button, nav, .print\:hidden {
+    display: none !important;
+  }
+  
+  .print\:p-0 {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* Sleek custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071328;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ==========================================================================
+   DAY MODE LOGIN & REGISTRATION EMAIL OTP WIDGET CONTRAST
+   ========================================================================== */
+html.light .verify-otp-btn {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #0284c7 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+}
+
+html.light .verify-otp-btn span,
+html.light .verify-otp-btn svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+html.light .reg-otp-box {
+  background-color: #f8fafc !important;
+  border: 1.5px solid #93c5fd !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08) !important;
+}
+
+html.light .reg-otp-prompt {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html.light .reg-otp-resend {
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+
+html.light .reg-otp-box input {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #cbd5e1 !important;
+}
+
+html.light .reg-otp-box input:focus {
+  border-color: #2563eb !important;
+}
